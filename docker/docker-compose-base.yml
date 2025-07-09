@@ -152,7 +152,7 @@ services:
     ports:
       - ${MYSQL_PORT}:3306
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data_ragflow:/var/lib/mysql
       - ./init.sql:/data/application/init.sql
     networks:
       - ragflow
@@ -215,7 +215,7 @@ volumes:
     driver: local
   infinity_data:
     driver: local
-  mysql_data:
+  mysql_data_ragflow:
     driver: local
   minio_data:
     driver: local
