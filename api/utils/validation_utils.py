@@ -18,13 +18,13 @@ from enum import auto
 from typing import Annotated, Any
 from uuid import UUID
 
+from api.constants import DATASET_NAME_LIMIT
 from flask import Request
-from pydantic import BaseModel, Field, StringConstraints, ValidationError, field_validator
+from pydantic import (BaseModel, Field, StringConstraints, ValidationError,
+                      field_validator)
 from pydantic_core import PydanticCustomError
 from strenum import StrEnum
 from werkzeug.exceptions import BadRequest, UnsupportedMediaType
-
-from api.constants import DATASET_NAME_LIMIT
 
 
 def validate_and_parse_json_request(request: Request, validator: type[BaseModel], *, extras: dict[str, Any] | None = None, exclude_unset: bool = False) -> tuple[dict[str, Any] | None, str | None]:
@@ -325,6 +325,7 @@ class ChunkMethodEnum(StrEnum):
     qa = auto()
     table = auto()
     tag = auto()
+    xml = auto()
 
 
 class GraphragMethodEnum(StrEnum):

@@ -6,14 +6,14 @@ mysql:
   user: 'root'
   password: 'infini_rag_flow'
   host: 'localhost'
-  port: 5455
+  port: 5457
   max_connections: 900
   stale_timeout: 300
   max_allowed_packet: 1073741824
 minio:
   user: 'rag_flow'
   password: 'infini_rag_flow'
-  host: 'localhost:9000'
+  host: 'localhost:9300'
 es:
   hosts: 'http://localhost:1200'
   username: 'elastic'

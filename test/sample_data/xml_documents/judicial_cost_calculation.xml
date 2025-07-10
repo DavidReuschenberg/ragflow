@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<judicial_document id="doc_001" type="cost_calculation">
+    <header>
+        <title>Medical Cost Calculation - Case ABC123</title>
+        <date>2024-01-15</date>
+        <jurisdiction>District Court</jurisdiction>
+    </header>
+    
+    <patient_info>
+        <name>John Doe</name>
+        <case_number>ABC123</case_number>
+        <insurance_id>INS456789</insurance_id>
+    </patient_info>
+    
+    <medical_procedures>
+        <procedure id="proc_001">
+            <name>Initial Consultation</name>
+            <diagnosis>Acute lower back pain</diagnosis>
+            <cost_calculation>
+                <base_fee>150.00</base_fee>
+                <complexity_factor>1.2</complexity_factor>
+                <total_fee>180.00</total_fee>
+            </cost_calculation>
+        </procedure>
+        
+        <procedure id="proc_002">
+            <name>X-Ray Examination</name>
+            <diagnosis>Lumbar spine examination</diagnosis>
+            <cost_calculation>
+                <base_fee>200.00</base_fee>
+                <equipment_surcharge>50.00</equipment_surcharge>
+                <interpretation_fee>75.00</interpretation_fee>
+                <total_fee>325.00</total_fee>
+            </cost_calculation>
+        </procedure>
+        
+        <procedure id="proc_003">
+            <name>Physical Therapy Session</name>
+            <treatment>Manual therapy and exercises</treatment>
+            <cost_calculation>
+                <session_fee>100.00</session_fee>
+                <sessions_count>6</sessions_count>
+                <total_fee>600.00</total_fee>
+            </cost_calculation>
+        </procedure>
+    </medical_procedures>
+    
+    <fee_summary>
+        <section type="procedures">
+            <item name="consultation">180.00</item>
+            <item name="examination">325.00</item>
+            <item name="therapy">600.00</item>
+        </section>
+        
+        <calculation>
+            <subtotal>1105.00</subtotal>
+            <tax_rate>0.08</tax_rate>
+            <tax_amount>88.40</tax_amount>
+            <total_amount>1193.40</total_amount>
+        </calculation>
+    </fee_summary>
+    
+    <legal_notes>
+        <paragraph>
+            This cost calculation is based on the standard medical fee schedule 
+            as approved by the district court. All procedures were deemed medically 
+            necessary for the treatment of the patient's condition.
+        </paragraph>
+        
+        <paragraph>
+            The fees include all necessary materials, equipment usage, and 
+            professional services rendered. Additional costs may apply for 
+            specialized treatments not covered in this initial calculation.
+        </paragraph>
+    </legal_notes>
+</judicial_document> 

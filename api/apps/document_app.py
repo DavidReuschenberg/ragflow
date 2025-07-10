@@ -136,6 +136,8 @@ def web_crawl():
             doc["parser_id"] = ParserType.PRESENTATION.value
         if re.search(r"\.(eml)$", filename):
             doc["parser_id"] = ParserType.EMAIL.value
+        if re.search(r"\.xml$", filename, re.IGNORECASE):
+            doc["parser_id"] = ParserType.XML.value
         DocumentService.insert(doc)
         FileService.add_file_from_kb(doc, kb_folder["id"], kb.tenant_id)
     except Exception as e:

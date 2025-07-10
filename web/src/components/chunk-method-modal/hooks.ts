@@ -83,6 +83,7 @@ const ParserListMap = new Map([
     ],
   ],
   [['json'], [DocumentParserType.Naive, DocumentParserType.KnowledgeGraph]],
+  [['xml'], [DocumentParserType.Xml, DocumentParserType.Naive]],
   [['eml'], [DocumentParserType.Email]],
 ]);
 

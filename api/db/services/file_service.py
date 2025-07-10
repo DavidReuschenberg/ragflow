@@ -19,9 +19,6 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from flask_login import current_user
-from peewee import fn
-
 from api.constants import FILE_NAME_LEN_LIMIT
 from api.db import KNOWLEDGEBASE_FOLDER_NAME, FileSource, FileType, ParserType
 from api.db.db_models import DB, Document, File, File2Document, Knowledgebase
@@ -30,7 +27,10 @@ from api.db.services.common_service import CommonService
 from api.db.services.document_service import DocumentService
 from api.db.services.file2document_service import File2DocumentService
 from api.utils import get_uuid
-from api.utils.file_utils import filename_type, read_potential_broken_pdf, thumbnail_img
+from api.utils.file_utils import (filename_type, read_potential_broken_pdf,
+                                  thumbnail_img)
+from flask_login import current_user
+from peewee import fn
 from rag.utils.storage_factory import STORAGE_IMPL
 
 
@@ -494,4 +494,6 @@ class FileService(CommonService):
             return ParserType.PRESENTATION.value
         if re.search(r"\.(eml)$", filename):
             return ParserType.EMAIL.value
+        if re.search(r"\.xml$", filename, re.IGNORECASE):
+            return ParserType.XML.value
         return default

@@ -27,24 +27,17 @@ from urllib.parse import quote, urlencode
 from uuid import uuid1
 
 import requests
-from flask import (
-    Response,
-    jsonify,
-    make_response,
-    send_file,
-)
-from flask import (
-    request as flask_request,
-)
-from itsdangerous import URLSafeTimedSerializer
-from peewee import OperationalError
-from werkzeug.http import HTTP_STATUS_CODES
-
 from api import settings
 from api.constants import REQUEST_MAX_WAIT_SEC, REQUEST_WAIT_SEC
 from api.db.db_models import APIToken
 from api.db.services.llm_service import LLMService, TenantLLMService
 from api.utils import CustomJSONEncoder, get_uuid, json_dumps
+from flask import Response, jsonify, make_response
+from flask import request as flask_request
+from flask import send_file
+from itsdangerous import URLSafeTimedSerializer
+from peewee import OperationalError
+from werkzeug.http import HTTP_STATUS_CODES
 
 requests.models.complexjson.dumps = functools.partial(json.dumps, cls=CustomJSONEncoder)
 
@@ -362,6 +355,7 @@ def get_parser_config(chunk_method, parser_config):
         "knowledge_graph": {"chunk_token_num": 8192, "delimiter": r"\n", "entity_types": ["organization", "person", "location", "event", "time"]},
         "email": None,
         "picture": None,
+        "xml": {"chunk_token_num": 512, "preserve_structure": True, "target_elements": ["paragraph", "section", "article", "item", "entry", "cost", "calculation", "fee", "procedure", "diagnosis", "treatment", "p", "div", "span"], "raptor": {"use_raptor": False}},
     }
     parser_config = key_mapping[chunk_method]
     return parser_config

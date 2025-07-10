@@ -327,6 +327,15 @@ export default {
 <p>In a Tag column, <b>comma</b> is used to separate tags.</p>
 <i>Lines of texts that fail to follow the above rules will be ignored.</i>
 `,
+      xml: `<p>Supported file formats are <b>XML</b>.</p><p>
+      This method is designed for structured XML documents with hierarchical organization, such as judicial or legal documents with cost calculations.
+      </p><p>
+      The parser respects the XML structure by identifying key elements like paragraphs, sections, procedures, and calculations as natural chunk boundaries.
+      </p><p>
+      You can configure target elements to focus on specific parts of your XML documents. Common elements include: paragraph, section, article, item, entry, cost, calculation, fee, procedure, diagnosis, treatment.
+      </p><p>
+      Enable 'Preserve XML Structure' to maintain the hierarchical relationships between elements in the generated chunks.
+      </p>`,
       useRaptor: 'Use RAPTOR to enhance retrieval',
       useRaptorTip:
         'Enable RAPTOR for multi-hop question-answering tasks. See https://ragflow.io/docs/dev/enable_raptor for details.',

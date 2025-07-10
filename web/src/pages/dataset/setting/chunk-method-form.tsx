@@ -22,6 +22,7 @@ import { QAConfiguration } from './configuration/qa';
 import { ResumeConfiguration } from './configuration/resume';
 import { TableConfiguration } from './configuration/table';
 import { TagConfiguration } from './configuration/tag';
+import { XmlConfiguration } from './configuration/xml';
 
 const ConfigurationComponentMap = {
   [DocumentParserType.Naive]: NaiveConfiguration,
@@ -39,6 +40,7 @@ const ConfigurationComponentMap = {
   [DocumentParserType.Email]: EmailConfiguration,
   [DocumentParserType.Tag]: TagConfiguration,
   [DocumentParserType.KnowledgeGraph]: KnowledgeGraphConfiguration,
+  [DocumentParserType.Xml]: XmlConfiguration,
 };
 
 function EmptyComponent() {

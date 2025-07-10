@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <header>
+        <title>Test Medical Document</title>
+        <patient_id>12345</patient_id>
+    </header>
+    <section>
+        <paragraph>This is a test paragraph.</paragraph>
+        <cost>100.00</cost>
+        <calculation>
+            <item>Test procedure</item>
+            <amount>50.00</amount>
+        </calculation>
+    </section>
+</document> 
